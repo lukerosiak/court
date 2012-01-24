@@ -1,0 +1,11 @@
+Look up a list of cases (criminal, civil, landlord/tenant, and otherwise) in the DC Superior Court for an individual's name. If you want only one of those case types, modify the program to make a selection from the drop-down accordingly.
+
+This scraper uses Selenium, which turns on an actual browser and navigates it so all Javascript, headers and cookies are handled. If you are running this on a server or otherwise don't want a Firefox GUI popping up, install Selenium Server, start the server process running, and uncomment the line near the top of the script (and comment out the Firefox one). This is the first time I've used Selenium but I thought it was great.
+
+To use it, just give it file paths to output to (summary, parties and docket) essentially 3 related tables you can join on case number. Then just give it any sort of python list of names to scraper.loopThroughNames(yourlist).
+
+This also uses the Sunlight Foundation's NameCleaver to split up first, middle and last names.
+
+Released into the public domain/GNU license.
+Luke Rosiak
+lukerosiak.info

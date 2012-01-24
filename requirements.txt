@@ -1,0 +1,3 @@
+git+http://github.com/sunlightlabs/name-cleaver.git#egg=name-cleaver
+selenium
+beautifulsoup
