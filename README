@@ -1,8 +1,18 @@
-Look up a list of cases (criminal, civil, landlord/tenant, and otherwise) in the DC Superior Court for an individual's name. If you want only one of those case types, modify the program to make a selection from the drop-down accordingly.
+Look up a list of cases in the DC-area courts for a list of any size of people or corporations' names. 
 
-This scraper uses Selenium, which turns on an actual browser and navigates it so all Javascript, headers and cookies are handled. If you are running this on a server or otherwise don't want a Firefox GUI popping up, install Selenium Server, start the server process running, and uncomment the line near the top of the script (and comment out the Firefox one). This is the first time I've used Selenium but I thought it was great.
+There are several different files, most of which are self-explanatory:
+DCsuperior
+DCsuperiorcorp (look up corporations in criminal and civil filings_
+mdcourt (look up individuals in Maryland civil and criminal filings)
+mdliens (look up liens against people who owe debts in Maryland. Does not include Prince George's County)
+mdlienscorp (look up liens against corporations who owe debts in Maryland. Does not include Prince George's County)
 
-To use it, just give it file paths to output to (summary, parties and docket) essentially 3 related tables you can join on case number. Then just give it any sort of python list of names to scraper.loopThroughNames(yourlist).
+To use any of them, provide one command line argument: The path to a text file containing a list of names to look up, one per line.
+
+In the same directory as the input file, one or more outputs will be created. Some create only one file of results, usually called "summary"; others output more complex results, such as dcsuperior, which outputs (summary, parties and docket)--essentially 3 related tables you can join on case number. 
+
+
+Some of the scrapers use Selenium, which turns on an actual browser and navigates it so all Javascript, headers and cookies are handled. If you are running this on a server or otherwise don't want a Firefox GUI popping up, install Selenium Server, start the server process running, and uncomment the line near the top of the DC scripts (and comment out the Firefox one). This is the first time I've used Selenium but I thought it was great.
 
 This also uses the Sunlight Foundation's NameCleaver to split up first, middle and last names.
 
